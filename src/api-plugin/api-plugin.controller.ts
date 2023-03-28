@@ -1,9 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiPluginService } from './api-plugin.service';
-import { ApiTags, ApiOperation } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiExcludeController } from '@nestjs/swagger';
 
 @ApiTags('api-plugin')
 @Controller('.well-known/')
+@ApiExcludeController()
 export class ApiPluginController {
   constructor(private readonly apiPluginService: ApiPluginService) {}
 

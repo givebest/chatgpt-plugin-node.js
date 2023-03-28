@@ -19,6 +19,12 @@ $ pnpm run start:dev
 
 # production mode
 $ pnpm run start:prod
+
+# api-plugin.json
+http://localhost:3000/.well-known/api-plugin.json
+
+# OpenAPI
+http://localhost:3000/api-yaml
 ```
 
 ## Test

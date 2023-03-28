@@ -15,8 +15,7 @@ export class ApiPluginService {
       description_for_model: getConfigService('DESCRIPTION_FOR_MODEL'),
       description_for_human: getConfigService('DESCRIPTION_FOR_HUMAN'),
       auth: {
-        type: 'user_http',
-        authorization_type: 'bearer',
+        type: 'none',
       },
       api: {
         type: 'openapi',

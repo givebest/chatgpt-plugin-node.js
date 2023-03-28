@@ -6,6 +6,10 @@ import { ConfigService } from '@nestjs/config';
 async function bootstrap() {
   const configService = new ConfigService();
   const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    origin: [configService.get('BASE_UEL'), configService.get('CORS_ORIGIN')],
+    credentials: true,
+  });
 
   const config = new DocumentBuilder()
     .setTitle('TODO Plugin')

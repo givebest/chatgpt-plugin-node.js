@@ -7,9 +7,12 @@ import { ConfigModule } from '@nestjs/config';
 import { ApiPluginModule } from './api-plugin/api-plugin.module';
 import { TodosModule } from './todos/todos.module';
 
+const ENV = process.env.NODE_ENV;
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      envFilePath: ENV ? 'env/.env.dev' : 'env/.env.prod',
+    }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),

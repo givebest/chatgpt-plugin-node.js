@@ -12,10 +12,8 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle('TODO Plugin')
-    .setDescription(
-      `A plugin that allows the user to create and manage a TODO list using ChatGPT. If you do not know the user's username, ask them first before making queries to the plugin. Otherwise, use the username "global".`,
-    )
+    .setTitle(configService.get('NAME_FOR_HUMAN'))
+    .setDescription(configService.get('DESCRIPTION_FOR_HUMAN'))
     .setVersion('1.0')
     .addServer(configService.get('BASE_UEL'))
     .build();
